@@ -3,23 +3,17 @@ import Buscador from './Buscador';
 import styles from './Cardapio.module.scss';
 import Filtros from './Filtros';
 import Ordenador from './Ordenador';
-import Items from './Itens/index';
 import Itens from './Itens/index';
+import stylesTema from 'styles/Tema.module.scss';
 
 
 export default function Cardapio() {
     const [busca, setBusca] = useState("");
     const [filtro, setFiltro] = useState<number | null>(null);
     const [ordenador, setOrdenador] = useState("");
-    return (
-        <main>
-            <header className={styles.header}>
-                <div className={styles.header__text}>
-                    A casa do código e da massa
-                </div>
-            </header>
+    return (   
             <section className={styles.cardapio}>
-                <h3 className={styles.cardapio__titulo}>Cardápio</h3>
+                <h3 className={stylesTema.titulo}>Cardápio</h3>
                 <Buscador busca={busca} setBusca={setBusca} />
                 <div className={styles.cardapio__filtros}>
                     <Filtros
@@ -37,6 +31,5 @@ export default function Cardapio() {
                     ordenador={ordenador}
                 />
             </section>
-        </main>
     )
 }
